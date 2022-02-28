@@ -25,11 +25,11 @@ public class Lab {
     }
 
     public void calAvg() {
-        setAvgGrade(0);
+        this.avgGrade = 0;
         for (Student student : students) {
-            setAvgGrade(student.getGrade() + this.avgGrade);
+            this.avgGrade += student.getGrade();
         }
-        setAvgGrade(this.avgGrade / students.size());
+        this.avgGrade /= students.size();
     }
 
     public void printLabInfo() {
@@ -37,7 +37,7 @@ public class Lab {
         StringBuilder sb = new StringBuilder();
         sb.append("TeacherName: ").append(this.teacherName).append("\n");
         sb.append("dayOfWeek: ").append(this.dayOfWeek).append("\n");
-        sb.append("maxSize: ").append(this.teacherName).append("\n");
+        sb.append("maxSize: ").append(this.maxSize).append("\n");
         sb.append("avgGrade: ").append(this.avgGrade).append("\n");
         sb.append("Students list: \n");
 
@@ -76,11 +76,5 @@ public class Lab {
         this.maxSize = maxSize;
     }
 
-    public void setAvgGrade(double avgGrade) {
-        if (avgGrade < 10)
-            this.avgGrade = 10;
-        else
-            this.avgGrade = avgGrade;
-    }
 
 }
