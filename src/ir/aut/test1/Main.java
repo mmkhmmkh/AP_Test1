@@ -17,7 +17,13 @@ public class Main {
         arr.add("E abc");
         arr.add("F abc");
 
-
+        Iterator<String> it = arr.iterator();
+        while(it.hasNext()) {
+            String a = it.next();
+            if (a.contains("C")) {
+                it.remove();
+            }
+        }
 
         System.out.println(arr);
 
